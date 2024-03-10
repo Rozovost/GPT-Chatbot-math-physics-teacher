@@ -31,7 +31,7 @@ def get_resp(promt, prev_answer, subj, level):
     if resp.status_code == 200 and 'choices' in resp.json():
         gpt_resp = resp.json()['choices'][0]['message']['content']
         log.info(f"Ответ gpt: {gpt_resp}")
-        return gpt_resp
+        return gpt_resp.replace('"', "'")
     else:
         log.error(f"Ошибка: {resp.json()}")
         return "ERROR"

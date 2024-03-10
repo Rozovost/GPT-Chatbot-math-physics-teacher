@@ -19,18 +19,11 @@ create_db()  # создание базы данных
 
 # сбор стандартной клавиатуры
 keyboard = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
-keyboard.add("/solve_task_math")
-keyboard.add("/solve_task_physics")
-keyboard.add("/continue")
-keyboard.add("/help")
+keyboard.add("/solve_task_math", "/solve_task_physics", "/continue", "/help")
 
 # сбор клавиатуры для continue
 cont_keyboard = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
-cont_keyboard.add("/solve_task_math")
-cont_keyboard.add("/solve_task_physics")
-cont_keyboard.add("/continue")
-cont_keyboard.add("/help")
-cont_keyboard.add("/response")
+cont_keyboard.add("/solve_task_math", "/solve_task_physics", "/continue", "/help", "/response")
 
 # сбор клавиатуры старта
 start_keyboard = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
@@ -39,8 +32,7 @@ start_keyboard.add("/help")
 
 # сбор клавиатуры выбора уровня
 level_keyboard = ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
-level_keyboard.add("Новичок")
-level_keyboard.add("Продвинутый")
+level_keyboard.add("Новичок", "Продвинутый")
 
 
 @bot.message_handler(commands=['start'])
